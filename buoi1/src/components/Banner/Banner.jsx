@@ -21,12 +21,12 @@ const Banner = () => {
                 </div>
                 <div className="hero-images">
                     <img 
-                        src="/src/assets/phone_2.png" 
+                        src="../../assets/phone_2.png" 
                         alt="App mockup back" 
                         className="phone-back" 
                     />
                     <img 
-                        src="/src/assets/phone_1.png" 
+                        src="../../assets/phone_1.png" 
                         alt="App mockup front" 
                         className="phone-front" 
                     />
