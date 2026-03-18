@@ -1,6 +1,7 @@
 import React from "react";
 import './Banner.css';
-
+import phone1 from '../../assets/phone_1.png';
+import phone2 from '../../assets/phone_2.png';
 const Banner = () => {
 
   return (
@@ -21,12 +22,12 @@ const Banner = () => {
                 </div>
                 <div className="hero-images">
                     <img 
-                        src="../../assets/phone_2.png" 
+                        src={phone2}
                         alt="App mockup back" 
                         className="phone-back" 
                     />
                     <img 
-                        src="../../assets/phone_1.png" 
+                        src={phone1} 
                         alt="App mockup front" 
                         className="phone-front" 
                     />
