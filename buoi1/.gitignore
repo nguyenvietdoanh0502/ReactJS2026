@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Bỏ qua các file chứa biến môi trường và API Key
+.env
+.env.local
+.env.development
+.env.production

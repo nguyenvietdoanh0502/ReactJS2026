@@ -1,0 +1,69 @@
+/* Container của thẻ: Nền tối sâu, viền mờ và glow nhẹ */
+.member-card {
+  background-color: #0a0f16; /* Màu nền đen pha chút xanh sâu */
+  border: 1px solid rgba(0, 229, 255, 0.15); /* Viền màu cyan trong suốt */
+  border-radius: 16px;
+  padding: 24px 32px;
+  width: max-content;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Căn giữa nội dung */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  /* Ánh sáng glow bao quanh thẻ */
+  box-shadow: 0 8px 32px rgba(0, 229, 255, 0.05),
+              inset 0 0 20px rgba(0, 229, 255, 0.02);
+  transition: all 0.3s ease;
+}
+
+/* Hiệu ứng khi di chuột qua thẻ: Sáng lên một chút */
+.member-card:hover {
+  border-color: rgba(0, 229, 255, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 229, 255, 0.1),
+              0 0 15px rgba(0, 229, 255, 0.1);
+}
+
+/* Tên (h2): Màu trắng sáng */
+.member-card h2 {
+  margin: 0 0 8px 0;
+  font-size: 24px;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+/* Chức vụ (p): Màu xám xanh nhẹ nhàng */
+.member-card p {
+  margin: 0 0 24px 0;
+  font-size: 15px;
+  color: #8a9bb0; 
+}
+
+/* Nút Bình chọn: Gradient xanh cyan phát sáng */
+.member-card button {
+  background: linear-gradient(135deg, #00f2fe 0%, #00b8d4 100%);
+  color: #001a22; /* Chữ màu tối để nổi bật trên nền cyan sáng */
+  border: none;
+  border-radius: 10px; /* Bo góc vừa phải giống nút Send */
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  
+  /* Đổ bóng màu cyan tạo hiệu ứng glow phát sáng */
+  box-shadow: 0 4px 15px rgba(0, 229, 255, 0.4);
+  transition: all 0.2s ease;
+}
+
+/* Hiệu ứng hover của nút: Nổi lên và sáng rực hơn */
+.member-card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 229, 255, 0.6);
+  background: linear-gradient(135deg, #33f4fe 0%, #00cceb 100%);
+}
+
+/* Hiệu ứng khi click nút */
+.member-card button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px rgba(0, 229, 255, 0.4);
+}

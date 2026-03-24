@@ -1,0 +1,67 @@
+.header{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: flex-start;
+    background-color: white;
+    border-radius: 20px 20px 0 0;
+}
+.header img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.info h2{
+    color: black;
+    font-size: 28px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.info p{
+    color: rgba(151, 151, 151, 0.986);
+    font-size: 16px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: left;
+}
+.content{
+    width: 500px;
+    height: 600px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
+    overflow: hidden;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+.chatbot{
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 20px 20px 20px 20px;
+}
+.inputbox{
+    display: flex;
+    padding: 10px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 0 0 20px 20px;
+}
+.inputbox input{
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 16px;
+    color: black;
+    padding: 10px;
+    background-color: transparent;
+}
+.inputbox button{
+    background-color: #044bff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer;
+}

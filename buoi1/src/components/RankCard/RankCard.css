@@ -1,0 +1,15 @@
+.rank-card {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 2fr; 
+  padding: 15px 20px;
+  border-bottom: 1px solid #dddddd;
+  align-items: center;
+}
+
+.rank-card p {
+  margin: 0;
+  font-size: 16px;
+}
+.rank-card:last-of-type {
+  border-bottom: none;
+}
