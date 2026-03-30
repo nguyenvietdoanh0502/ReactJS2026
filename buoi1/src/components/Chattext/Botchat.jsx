@@ -5,7 +5,7 @@ function Botchat({content}) {
         <div className="botchat">
             <div>
                 <img src={avatar} alt="Bot Avatar" />
-                <p>Support Bot</p>
+                <p>GM Chatbot</p>
             </div>
             <p className="botContent">{content}</p>
         </div>

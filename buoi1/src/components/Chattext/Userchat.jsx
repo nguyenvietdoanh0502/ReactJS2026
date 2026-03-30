@@ -4,7 +4,7 @@ function Userchat({content}) {
     return (
         <div className="userchat">
             <div>
-                <p>Customer</p>
+                <p>You</p>
             </div>
             <p className="userContent">{content}</p>
         </div>

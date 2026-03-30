@@ -10,9 +10,7 @@ import Chatbot from './components/Chatbot/Chatbot'
 function App() {
   return (
     <>
-      <div className='BTVN'>
-        <Table />
-        <Button />
+      <div className='GM'>
         <Chatbot />
       </div>
       

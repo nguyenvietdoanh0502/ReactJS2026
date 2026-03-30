@@ -9,7 +9,6 @@
 .header img{
     width: 80px;
     height: 80px;
-    border-radius: 50%;
     margin-right: 10px;
 }
 .info h2{
@@ -56,7 +55,7 @@
     background-color: transparent;
 }
 .inputbox button{
-    background-color: #044bff;
+    background-color: #339933;
     color: white;
     border: none;
     border-radius: 20px;
@@ -65,3 +64,40 @@
     margin-left: 10px;
     cursor: pointer;
 }
+/* Khung chứa 3 dấu chấm */
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 20px; /* Chiều cao tương đương 1 dòng text bình thường */
+  padding: 0 5px;
+}
+
+/* Định dạng từng dấu chấm */
+.typing-indicator .dot {
+  width: 6px;
+  height: 6px;
+  background-color: currentColor; /* Tự động lấy màu giống màu chữ của bong bóng chat */
+  border-radius: 50%;
+  animation: bounce 1.4s infinite ease-in-out both;
+}
+
+/* Tạo độ trễ để 3 chấm nhảy lần lượt thay vì nhảy cùng lúc */
+.typing-indicator .dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+.typing-indicator .dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+/* Hiệu ứng phình to - thu nhỏ */
+@keyframes bounce {
+  0%, 80%, 100% { 
+    transform: scale(0); 
+  }
+  40% { 
+    transform: scale(1); 
+  }
+}
+
