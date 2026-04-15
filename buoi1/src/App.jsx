@@ -1,34 +1,33 @@
+
+import { useCallback, useMemo, useState } from 'react'
+import CheckoutButton from './components/common/CheckoutButton'
+
+const hugeArray = Array.from({ length: 10000 }, (_, i) => i + 1);
 function App() {
+  const [keyword, setKeyword] = useState('');
+  const [cartCount,setCartCount] = useState(0)
+  const handleCheckout = useCallback(() => {
+    alert(`Đã thanh toán :${cartCount} sản phẩm`)
+    setCartCount(0)
+  }, [cartCount]);
+  const testFilter = useMemo(() => {
+    console.log("Đang chạy vòng lặp 10000 lần...")
+    const evens = hugeArray.filter((num) => num % 2 === 0)
+    return evens.length
+  }, []);
+  
+  
   return (
-    <main className="flex min-h-screen items-center justify-center bg-slate-950 px-6 py-16 text-white">
-      <section className="w-full max-w-2xl rounded-3xl border border-white/10 bg-white/5 p-8 shadow-2xl shadow-cyan-950/30 backdrop-blur">
-        <span className="inline-flex rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-sm font-medium text-cyan-300">
-          Tailwind CSS da san sang
-        </span>
-
-        <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">
-          Vite + React + Tailwind CSS
-        </h1>
-
-        <p className="mt-4 text-base leading-7 text-slate-300 sm:text-lg">
-          Ban co the bat dau viet giao dien bang utility classes ngay trong{' '}
-          <code className="rounded bg-white/10 px-2 py-1 text-cyan-200">
-            src/App.jsx
-          </code>
-          .
-        </p>
-
-        <div className="mt-8 flex flex-wrap gap-3">
-          <button className="rounded-xl bg-cyan-400 px-5 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300">
-            Nut Tailwind mau
-          </button>
-          <button className="rounded-xl border border-white/15 px-5 py-3 font-semibold text-white transition hover:bg-white/10">
-            San sang de code
-          </button>
-        </div>
-      </section>
-    </main>
+    <>
+      <input className="mx-auto mt-16 block w-full max-w-md rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-800 shadow-sm outline-none transition focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100" value={keyword} onChange={(e) => setKeyword(e.target.value)}></input>
+      <h1 className="mt-8 text-center text-5xl font-black tracking-tight text-slate-800">{keyword} + {cartCount}</h1>
+      <h1 className="mt-8 text-center text-5xl font-black tracking-tight text-slate-800">{testFilter}</h1>
+      <button className="mx-auto mt-6 block rounded-2xl bg-emerald-600 px-6 py-3 text-base font-semibold text-white shadow-lg transition duration-200 hover:bg-emerald-700 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 active:scale-[0.98]" onClick={() => setCartCount(cartCount + 1)}>Thêm vào giỏ</button>
+      <CheckoutButton onCheckout={handleCheckout}/>
+    </>
   )
 }
 
 export default App
+
+
