@@ -1,34 +1,55 @@
+﻿import { Routes, Route, NavLink } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import UserDetail from "./pages/UserDetail";
+
 function App() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-slate-950 px-6 py-16 text-white">
-      <section className="w-full max-w-2xl rounded-3xl border border-white/10 bg-white/5 p-8 shadow-2xl shadow-cyan-950/30 backdrop-blur">
-        <span className="inline-flex rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-sm font-medium text-cyan-300">
-          Tailwind CSS da san sang
-        </span>
+    <div className="min-h-screen bg-slate-100 py-8">
+      <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
+        <nav className="mb-8 flex items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white p-3 shadow-sm">
+        <NavLink
+          to="/"
+          end
+          className={({ isActive }) =>
+            `rounded-lg px-4 py-2 text-sm font-semibold transition ${
+              isActive
+                ? "bg-blue-600 text-white shadow-sm"
+                : "text-slate-700 hover:bg-blue-50 hover:text-blue-700"
+            }`
+          }
+        >
+          Trang Chủ
+        </NavLink>
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            `rounded-lg px-4 py-2 text-sm font-semibold transition ${
+              isActive
+                ? "bg-blue-600 text-white shadow-sm"
+                : "text-slate-700 hover:bg-blue-50 hover:text-blue-700"
+            }`
+          }
+        >
+          Danh sách người dùng
+        </NavLink>
+      </nav>
 
-        <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">
-          Vite + React + Tailwind CSS
-        </h1>
-
-        <p className="mt-4 text-base leading-7 text-slate-300 sm:text-lg">
-          Ban co the bat dau viet giao dien bang utility classes ngay trong{' '}
-          <code className="rounded bg-white/10 px-2 py-1 text-cyan-200">
-            src/App.jsx
-          </code>
-          .
-        </p>
-
-        <div className="mt-8 flex flex-wrap gap-3">
-          <button className="rounded-xl bg-cyan-400 px-5 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300">
-            Nut Tailwind mau
-          </button>
-          <button className="rounded-xl border border-white/15 px-5 py-3 font-semibold text-white transition hover:bg-white/10">
-            San sang de code
-          </button>
-        </div>
-      </section>
-    </main>
-  )
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/users/:id" element={<UserDetail />} />
+        <Route
+          path="*"
+          element={
+            <h1 className="rounded-xl border border-red-100 bg-red-50 px-4 py-3 text-lg font-semibold text-red-600">
+              404 - Không tìm thấy trang!
+            </h1>
+          }
+        />
+      </Routes>
+      </div>
+    </div>
+  );
 }
-
-export default App
+export default App;
