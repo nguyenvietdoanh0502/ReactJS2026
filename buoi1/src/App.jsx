@@ -22,7 +22,7 @@ function App() {
           Trang Chủ
         </NavLink>
         <NavLink
-          to="/about"
+          to="/users"
           className={({ isActive }) =>
             `rounded-lg px-4 py-2 text-sm font-semibold transition ${
               isActive
@@ -37,7 +37,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/users" element={<About />} />
         <Route path="/users/:id" element={<UserDetail />} />
         <Route
           path="*"

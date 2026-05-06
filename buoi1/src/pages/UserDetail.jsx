@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 function UserDetail() {
     const navigate = useNavigate();
     function HandleBack(){
-        navigate("/about")
+        navigate("/users")
     }
     const {id} = useParams();
     const url = `${import.meta.env.VITE_API_BASE_URL}/users/${id}`;
