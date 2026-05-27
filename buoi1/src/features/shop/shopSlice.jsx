@@ -15,9 +15,18 @@ export const fetchProducts = createAsyncThunk(
   },
 );
 
+const getCartFromLocalStorage = () =>{
+  const savedCart = localStorage.getItem("cart")
+  if(savedCart){
+    return JSON.parse(savedCart);
+  }
+  return[];
+}
+
+
 const initialState = {
   products: [],
-  cart: [], // Mỗi item: { id, title, price, image, quantity }
+  cart: getCartFromLocalStorage(), // Mỗi item: { id, title, price, image, quantity }
   status: "idle", // "idle" | "loading" | "succeeded" | "failed"
   error: null,
 };
